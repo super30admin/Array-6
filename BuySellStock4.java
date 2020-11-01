@@ -1,5 +1,5 @@
 //TC: O(n*k)
-//SC: O(1)
+//SC: O(k)
 class Solution {
     public int maxProfit(int k, int[] prices) {
         if(k > prices.length / 2) {
