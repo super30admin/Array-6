@@ -1,4 +1,29 @@
 class Solution:
+    #Solution 1
+    def maxProfit(self, prices: List[int]) -> int:
+        #Approach: One-pass Simulation
+        #Time Complexity: O(n)
+        #Space Complexity: O(1)
+        #where, n is the length of prices
+        
+        #the following are for a single transaction
+        buy1, profit1 = inf, 0
+        
+        #the following combine both transactions
+        #by reinvesting the gained profit to reduce buy2
+        buy2, profit2 = inf, 0
+        
+        for price in prices:
+            buy1 = min(buy1, price)
+            profit1 = max(profit1, price - buy1)
+            
+            buy2 = min(buy2, price - profit1)           # effective price
+            profit2 = max(profit2, price - buy2)
+            
+        return profit2
+    
+    #Solution 2
+    """
     def maxProfit(self, prices: List[int]) -> int:
         #Approach: Two-pass Dynamic Proogramming
         #Time Complexity: O(n)
@@ -22,3 +47,4 @@ class Solution:
             maxProfit = max(maxProfit, firstHalfProfits[i] + secondHalfProfits[i])
             
         return maxProfit
+    """
