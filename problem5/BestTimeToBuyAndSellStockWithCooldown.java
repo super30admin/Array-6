@@ -6,7 +6,7 @@ package problem5;
 
 public class BestTimeToBuyAndSellStockWithCooldown {
 	/********************* Brute Force *********************/
-	// Time Complexity : O(n), n -> Length of prices
+	// Time Complexity : O(2^n), n -> Length of prices
 	// Space Complexity : O(1)
 	// Did this code successfully run on Leetcode : Timelimit Exceeded
 	// Any problem you faced while coding this : No
