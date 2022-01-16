@@ -1,0 +1,16 @@
+//Timecomplexity:- O(n).
+//space complexity:- O(n).
+
+class Solution {
+    public int maxProfit(int[] prices) {
+       int[] buy=new int[prices.length+1];
+       int[] profit=new int[prices.length+1];
+       buy[1]=prices[0];
+       profit[1]=0;
+        for(int i=2;i<prices.length+1;i++){
+            buy[i]=Math.min(buy[i-1],prices[i-1]-profit[i-2]);//subtracting offset profit by 2 indices because there is a cooldown period between.
+            profit[i]=Math.max(profit[i-1],prices[i-1]-buy[i]);
+        }
+        return profit[prices.length];
+    }
+}
