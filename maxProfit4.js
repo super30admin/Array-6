@@ -1,5 +1,5 @@
-// Time Complexity : O(n) where n is length of prices
-// Space Complexity : O(1)
+// Time Complexity : O(nk) where n is length of prices
+// Space Complexity : O(k)
 
 /**
  * @param {number} k
