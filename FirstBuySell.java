@@ -1,7 +1,9 @@
 public class FirstBuySell {
+    // Greedy approach
     // TC : O(n)
     // SC : O(1)
     public int maxProfit(int[] prices) {
+        if(prices == null || prices.length == 0) return 0;
 
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
