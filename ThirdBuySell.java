@@ -15,11 +15,11 @@ public class ThirdBuySell {
 
         int sell2 = Integer.MIN_VALUE;
 
-        for(int i=0; i < prices.length;i++) {
-            buy1 = Math.min(buy1, prices[i]);
-            sell1 = Math.max(sell1, prices[i] - buy1);
-            buy2 = Math.min(buy2, prices[i] - sell1);
-            sell2 = Math.max(sell2, prices[i] - buy2);
+        for (int price : prices) {
+            buy1 = Math.min(buy1, price);
+            sell1 = Math.max(sell1, price - buy1);
+            buy2 = Math.min(buy2, price - sell1);
+            sell2 = Math.max(sell2, price - buy2);
         }
 
         return sell2;
