@@ -4,8 +4,8 @@
 
 // Your code here along with comments explaining your approach
 
-// Time Complexity : O(100000)   (took max value of n=100000)
-// Space Complexity : O(n)
+// Time Complexity : O(n)   
+// Space Complexity : O(100000) (took max value of n=100000)
 // Did this code successfully run on Leetcode : yes
 
 // Approach: Recursion + Memoization
