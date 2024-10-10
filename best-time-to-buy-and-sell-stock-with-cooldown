@@ -1,0 +1,17 @@
+T.c --> O(n)
+S.c --> O(1)
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int sell = Integer.MIN_VALUE;
+        int held = Integer.MIN_VALUE;
+        int reset = 0;
+        for(int p : prices){
+            int prevsold = sell;
+            sell = held+p;
+            held = Math.max(held,reset-p);
+            reset = Math.max(prevsold,reset);
+        }  
+        return Math.max(sell,reset);
+    }
+}
