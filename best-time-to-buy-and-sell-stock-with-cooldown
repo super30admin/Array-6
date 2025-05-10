@@ -1,0 +1,47 @@
+// Time Complexity :O(n^2)
+// Space Complexity :O(n)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+// Your code here along with comments explaining your approach:DFS with memoization
+
+class Solution {
+    int[][] memo;
+
+    public int maxProfit(int[] prices) {
+        memo = new int[prices.length][2];
+        for (int i = 0; i < prices.length; i++) {
+            memo[i][0] = -1;
+            memo[i][1] = -1;
+        }
+        return helper(prices, 0, 0);//args
+    }
+
+    private int helper(int[] prices, int i, int flag) {
+        if (i >= prices.length)
+            return 0;
+        if (memo[i][flag] != -1) {
+            return memo[i][flag];
+        }
+        if (flag == 0) {
+            //buy case
+            //buy
+            int case1 = -prices[i] + helper(prices, i + 1, 1);
+            // not buy
+            int case2 = helper(prices, i + 1, flag);
+            int res = Math.max(case1, case2);
+            memo[i][flag] = res;
+
+            return res;
+        } else {
+            //sell case
+            //sell
+            int case3 = +prices[i] + helper(prices, i + 2, 0);
+            // not sell
+            int case4 = helper(prices, i + 1, flag);
+            int res = Math.max(case3, case4);
+            memo[i][flag] = res;
+            return res;
+        }
+
+    }
+}
