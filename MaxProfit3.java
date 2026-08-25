@@ -1,7 +1,7 @@
 //Time Complexity O(n)
 //Space Complexity O(1)
 
-public class MaxProfit2 {
+public class MaxProfit3 {
     public int maxProfit(int[] prices) {
         int buy1 = prices[0];
         int buy2 = prices[0];
